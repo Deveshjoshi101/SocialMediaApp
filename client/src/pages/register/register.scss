@@ -1,9 +1,15 @@
+@import "../../style.scss";
+
 .register {
   height: 100vh;
   background-color: rgb(193, 190, 255);
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include mobile {
+    height: 100%;
+  }
 
   .card {
     width: 50%;
@@ -13,6 +19,18 @@
     border-radius: 10px;
     min-height: 600px;
     overflow: hidden;
+
+    @include mobile {
+      flex-direction: column;
+      width: 90%;
+      min-height: 100vh;
+      border-radius: 0;
+    }
+
+    @include tablet {
+      width: 70%;
+      min-height: 80vh;
+    }
 
     .left {
       flex: 1;
@@ -26,12 +44,31 @@
       gap: 30px;
       color: white;
 
+      @include mobile {
+        padding: 20px;
+      }
+
       h1 {
         font-size: 100px;
         line-height: 100px;
+
+        @include mobile {
+          font-size: 40px;
+          line-height: 1.2;
+        }
+
+        @include tablet {
+          font-size: 60px;
+          line-height: 1.5;
+        }
       }
 
       p {
+        font-size: 16px;
+
+        @include mobile {
+          font-size: 14px;
+        }
       }
 
       span {
@@ -46,6 +83,10 @@
         color: rebeccapurple;
         font-weight: bold;
         cursor: pointer;
+
+        @include mobile {
+          width: 100%;
+        }
       }
     }
 
@@ -56,6 +97,10 @@
       flex-direction: column;
       gap: 50px;
       justify-content: center;
+
+      @include mobile {
+        padding: 20px;
+      }
 
       h1 {
         color: #555;
@@ -70,6 +115,10 @@
           border: none;
           border-bottom: 1px solid lightgray;
           padding: 20px 10px;
+
+          @include mobile {
+            padding: 15px 10px;
+          }
         }
 
         button {
@@ -80,6 +129,10 @@
           color: white;
           font-weight: bold;
           cursor: pointer;
+
+          @include mobile {
+            width: 100%;
+          }
         }
       }
     }
