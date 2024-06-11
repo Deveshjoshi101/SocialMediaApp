@@ -6,20 +6,29 @@ import {
   Outlet,
   RouterProvider,
 } from "react-router-dom";
-
+import { useContext } from "react";
+import './style.scss';
 import LeftBar from "./components/leftBar/LeftBar";
 import RightBar from "./components/rightBar/RightBar";
 import NavBar from "./components/navBar/NavBar";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
+import { DarkModeContext } from "./context/darkModeContext";
+
+/**
+ * Renders the main application component.
+ *
+ * @return {JSX.Element} The rendered application component.
+ */
 
 function App() {
 
-  const currentUser = true;
+  const currentUser = false;
+  const { darkMode } = useContext(DarkModeContext);
 
   const Layout = () => {
     return (
-      <div>
+      <div className={`theme-${darkMode ? "dark" : "light"}`}>
         <NavBar />
         <div style={{ display: "flex" }}>
           <LeftBar />
