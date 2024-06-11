@@ -14,6 +14,7 @@ import NavBar from "./components/navBar/NavBar";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import { DarkModeContext } from "./context/darkModeContext";
+import { AuthContext } from "./context/authContext";
 
 /**
  * Renders the main application component.
@@ -22,8 +23,7 @@ import { DarkModeContext } from "./context/darkModeContext";
  */
 
 function App() {
-
-  const currentUser = false;
+  const { currentUser } = useContext(AuthContext);
   const { darkMode } = useContext(DarkModeContext);
 
   const Layout = () => {

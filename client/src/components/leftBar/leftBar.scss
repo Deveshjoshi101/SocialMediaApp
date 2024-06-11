@@ -10,6 +10,10 @@
     background-color: themed("bg");
     color: themed("textColor");
 
+    @include mobile {
+      display: none;
+    }
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -18,7 +22,7 @@
       padding: 20px;
 
       hr {
-        margin: 20px 0;
+        margin: 20px 0px;
         border: none;
         height: 0.5px;
         background-color: themed("border");
@@ -44,10 +48,12 @@
             border-radius: 50%;
             object-fit: cover;
           }
+
           span {
             font-size: 14px;
           }
         }
+
         .item {
           display: flex;
           align-items: center;
@@ -56,6 +62,7 @@
           img {
             width: 30px;
           }
+
           span {
             font-size: 14px;
           }
